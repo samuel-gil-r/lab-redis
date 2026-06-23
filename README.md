@@ -58,7 +58,17 @@ XINFO GROUPS banco.transferencias
 
 ![Transferencias publicadas](images/pruebatransferencia.png)
 
+Ejecución del productor por consola. Se ingresan dos transferencias manualmente indicando cuenta origen, cuenta destino y monto. El sistema genera el evento `TransferenciaCreada`, lo publica en el stream `banco.transferencias` y Redis devuelve el ID único asignado a cada mensaje.
+
+---
+
 ![Eventos en Redis](images/eventos.png)
+
+Verificación directa en Redis usando `redis-cli`. Se ejecutaron los siguientes comandos:
+
+- `XRANGE banco.transferencias - +` — lista todos los eventos guardados en el stream, mostrando el ID de cada uno junto con sus campos (eventId, from, to, amount, currency, createdAt).
+- `XLEN banco.transferencias` — devuelve el número total de eventos almacenados en el stream.
+- `XINFO GROUPS banco.transferencias` — muestra los grupos de consumidores registrados (`fraude-group`, `notif-group`, `auditoria-group`), cuántos mensajes han leído y cuántos tienen pendientes de confirmar.
 
 ---
 
