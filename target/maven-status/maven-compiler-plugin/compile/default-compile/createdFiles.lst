@@ -1,0 +1,4 @@
+edu\eci\arsw\redis\model\TransferenciaCreada.class
+edu\eci\arsw\redis\producer\ProductorTransferencias.class
+edu\eci\arsw\redis\config\RedisConexion.class
+edu\eci\arsw\redis\service\TransferenciaService.class
