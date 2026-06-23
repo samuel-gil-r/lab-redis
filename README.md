@@ -56,9 +56,9 @@ XINFO GROUPS banco.transferencias
 
 ## Evidencia
 
-![Transferencias publicadas](pruebatransferencia/prueba.png)
+![Transferencias publicadas](images/pruebatransferencia.png)
 
-![Eventos en Redis](eventos/eventos.png)
+![Eventos en Redis](images/eventos.png)
 
 ---
 
